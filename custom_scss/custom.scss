@@ -1,0 +1,262 @@
+// custom scss
+@import "../node_modules/bootstrap/scss/bootstrap";
+// 1 Modify Primary and Secondary Colors
+$primary: #76280a; // Custom blue
+$secondary: #46337c; // Custom gray
+
+.btn-primary {
+  background-color: $primary;
+}
+
+.btn-secondary {
+  background-color: $secondary;
+}
+// 2. Change Spacing
+$spacer: 4rem; // Increase global spacing
+
+.mt-custom {
+  margin-top: $spacer;
+}
+
+//3 Adjust Typography
+$font-size-base: 2.2rem; // Increase base font size
+$font-family-sans-serif: 'Roboto', sans-serif;
+
+body {
+  font-size: $font-size-base;
+  font-family: $font-family-sans-serif;
+}
+// 4. Customize Buttons
+$btn-padding-y: 0.80rem;
+$btn-border-radius: 0.7rem;
+
+.btn-custom {
+  padding: $btn-padding-y 3rem;
+  border-radius: $btn-border-radius;
+  background-color: $primary;
+  color: rgb(100, 24, 24);
+}
+// 5. Add Custom Utility Classes
+.bg-custom {
+    background-color: lighten($primary, 20%);
+  }
+  
+  .text-custom {
+    color: darken($secondary, 10%);
+  }
+//   6. Customize Cards
+.card-custom {
+    border: 1px solid $primary;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+//   7. Navbar Background and Text Colors  
+$navbar-bg: #9dcebf;
+$navbar-text: #1b446c;
+
+.navbar-custom {
+  background-color: $navbar-bg;
+  color: $navbar-text;
+
+  .nav-link {
+    color: $navbar-text;
+  }
+}
+// 8. Adjust Grid Breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 1200px, // Adjusted breakpoint
+  xl: 1400px
+);
+
+// 9. Modify Shadow Styles
+$box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+.shadow-custom {
+  box-shadow: $box-shadow;
+}
+// 10. Update Progress Bar Colors
+$progress-bar-color: $primary;
+
+.progress-bar-custom {
+  background-color: $progress-bar-color;
+}
+// 11. Adjust Modal Dimensions
+.modal-custom {
+    max-width: 800px;
+  }
+//   12. Customize Table Borders  
+.table-custom {
+    border: 3px solid $primary;
+  }
+//13. Modify Form Control Sizes  
+$input-height: 2.5rem;
+
+.form-control-custom {
+  height: $input-height;
+}
+//14. Update Alert Colors
+$alert-primary-bg: lighten($primary, 40%);
+
+.alert-custom {
+  background-color: $alert-primary-bg;
+}
+//15. Add Hover Effects
+.btn-hover-custom {
+    &:hover {
+      background-color: darken($primary, 10%);
+      color: white;
+    }
+  }
+//16. Adjust Tooltip Styles  
+$tooltip-bg: $primary;
+$tooltip-color: #fff;
+
+.tooltip-custom {
+  background-color: $tooltip-bg;
+  color: $tooltip-color;
+  border-radius: 0.9rem;
+}
+//17. Modify Breadcrumb Spacing
+.breadcrumb-custom {
+    padding: 2rem;
+    background-color: lighten($primary, 40%);
+    border-radius: 0.5rem;
+  }
+//18. Customize Badge Colors  
+$badge-bg: $secondary;
+$badge-color: #01a217;
+
+.badge-custom {
+  background-color: $badge-bg;
+  color: $badge-color;
+}
+//19. Change Dropdown Background and Borders
+.dropdown-menu-custom {
+    background-color: lighten($primary, 40%);
+    border: 1px solid $primary;
+    border-radius: 0.5rem;
+  }
+//20. Update Pagination Styles  
+$pagination-bg: lighten($primary, 80%);
+$pagination-hover-bg: darken($primary, 90%);
+
+.pagination-custom {
+  .page-item {
+    a {
+      background-color: $pagination-bg;
+      color: $primary;
+
+      &:hover {
+        background-color: $pagination-hover-bg;
+        color: #620b46;
+      }
+    }
+  }
+}
+//21. Customize Carousel Indicators
+.carousel-indicators-custom {
+    .carousel-indicators li {
+      background-color: $primary;
+      border-radius: 70%;
+  
+      &.active {
+        background-color: darken($primary, 70%);
+      }
+    }
+  }
+//22. Adjust Toast Notification Styles  
+$toast-bg: lighten($primary, 80%);
+$toast-border-color: $primary;
+
+.toast-custom {
+  background-color: $toast-bg;
+  border: 9px solid $toast-border-color;
+  border-radius: 0.8rem;
+}
+// 23. Modify List Group Padding
+.list-group-custom {
+    .list-group-item {
+      padding: 1.8rem;
+      border-radius: 0.7rem;
+    }
+  }
+//   24. Add Custom Media Query Utilities
+@mixin custom-media-query($breakpoint) {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  }
+  
+  .text-responsive {
+    font-size: 1rem;
+  
+    @include custom-media-query(768px) {
+      font-size: 1.5rem;
+    }
+  
+    @include custom-media-query(1200px) {
+      font-size: 2rem;
+    }
+  }
+//25. Adjust Accordion Styles  
+.accordion-custom {
+    .accordion-button {
+      background-color: $primary;
+      color: #7d14d2;
+  
+      &:not(.collapsed) {
+        background-color: darken($primary, 10%);
+      }
+    }
+  }
+// 26. Modify Off-Canvas Styles  
+.offcanvas-custom {
+    background-color: $primary;
+    color: rgb(40, 81, 162);
+  }
+//   27. Adjust Column Gutters
+$grid-gutter-width: 1.5rem; // Custom gutter width
+
+.row-custom {
+  margin-left: -($grid-gutter-width / 2);
+  margin-right: -($grid-gutter-width / 2);
+
+  .col {
+    padding-left: ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+  }
+}
+// 28. Create Custom Responsive Utilities
+// Hide on mobile, show on desktop
+.responsive-visibility {
+    display: none;
+  
+    @media (min-width: 800px) {
+      display: block;
+    }
+  }
+  
+  //29. Customize Accordion Icons
+  $accordion-icon-color: $primary;
+
+.accordion-custom-icons {
+  .accordion-button::after {
+    color: $accordion-icon-color;
+  }
+}
+// 30. Add Dark Mode Theme
+$dark-mode-bg: #194571;
+$dark-mode-text: #f8f9fa;
+
+.dark-mode {
+  background-color: $dark-mode-bg;
+  color: $dark-mode-text;
+
+  a {
+    color: lighten($dark-mode-text, 80%);
+  }
+}
+
